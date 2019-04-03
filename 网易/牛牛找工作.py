@@ -1,4 +1,5 @@
 import sys
+
 lines = sys.stdin.readlines()
 work = {}
 for line in lines[1:-1]:

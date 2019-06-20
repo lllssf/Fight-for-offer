@@ -55,7 +55,17 @@
     - 基于全局序列做决策（在语音识别中即使某个单词发音的中间音素失真或丢失仍可以被识别）
 5. 前向-后向算法：首先对于HMM的参数进行一个初始的估计，然后通过给定是数据评估参数然后修正，是一种以梯度下降形式寻找错误测度的最小值。
     - 是**EM（Expectation-Maximization）算法**的一个特例，EM算法是求参数**最大似然估计（MLE，maximum likelihood estimation）**的一种方法，可以广泛地应用于处理缺损数据，截尾数据，带有讨厌数据等**不完全数据（Incomplete data）**
-
+### HMM在自然语言处理中的应用：词性标注（Part-of-Speech tagging, POS tagging)
+#### 词性标注
+1. 选择标记集：
+    - 参考计算所汉语词性标记集： http://www.ictclas.org/ictclas_docs_003.html
+2. 词性标注歧义：需结合上下文
+3. 标注算法：
+    - **基于规则的标注算法（rule-based tagger）**：手工制作的歧义消解规则库
+    - **随机标注算法（stochastic tagger）**：使用一个训练语料库来计算在给定上下文中特定单词具有给定标记的概率，如基于HMM的标注算法
+    - **混合型标注算法**：TBL标注算法
+    
+    
 ## Paper: CNN for Sentence Classification
 1. filter: h*k
 
@@ -80,4 +90,5 @@ https://web.stanford.edu/~jurafsky/slp3/
 1. 新词库
     - “”中的文字不拆分
     - 专有名词不拆分
-    - 统一相似or模糊or错别字词语，如登陆，登入统一为登录 —— 中文输入纠错
+    - “操作”词汇标注
+2. 统一相似or模糊or错别字词语，如登陆，登入统一为登录 —— 中文输入纠错

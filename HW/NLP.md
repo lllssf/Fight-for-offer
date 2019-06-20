@@ -31,6 +31,14 @@
 **pip install glove_python**
 ## 正则表达式
 
+## HMM（隐马尔科夫模型）
+### Introduction
+寻找一个事物在一段时间里的变化模式（规律）
+### 生成模式（Generating Patterns）
+1. 确定性模式（Deterministic Patterns）
+2. 非确定性模式（Non-deterministic Patterns）：
+    - 马尔可夫假设：模型的当前状态仅仅依赖于前面的几个状态
+
 ## Paper: CNN for Sentence Classification
 1. filter: h*k
 
@@ -39,4 +47,6 @@
 2. 中文维基百科数据： https://dumps.wikimedia.org/zhwiki/latest/zhwiki-latest-pages-articles.xml.bz2
 
 ## 路线
-1. 生成专有词向量库
+1. 新词库
+    - “”中的文字不拆分
+    - 专有名词不拆分

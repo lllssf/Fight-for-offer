@@ -20,15 +20,6 @@
     - 概念：对词汇语义的描述
     - 义原：知识表示语言（描述一个”概念“的最小意义单位），《知网》共有1500义原
 
-## word2vec - Google
-**pip install --upgrade gensim**
-1. 词向量： One-hot representation --> Distributed Representation --> 计算欧氏距离或cos距离得到词语语义距离
-2. 语言模型： N-gram, N-pos(part of speech) --> 拟合P
-3. Word2vec有两种类型，每种类型有两种策略
-4. CBOW加层次的网络结构：输入层（词向量）-->隐藏层（累加和）-->输出层（霍夫曼树）——判断一句话是否是自然语言
-
-## GloVe - Stanford
-**pip install glove_python**
 ## 正则表达式
 
 ## HMM（隐马尔科夫模型）
@@ -51,10 +42,28 @@
     - pi：初始概率向量
     - A：状态转移矩阵
     - B：混淆矩阵
-2. 应用：给定HMM求一个观察序列的概率（评估）；搜索最有可能生成一个观察序列的隐藏状态序列（解码）；给定观察序列生成一个HMM（学习）。
+2. 应用：
+    - 评估：**前向算法（Forward algorithm）**对一个观察序列匹配最可能的HMM —— 语音识别
+    - 解码：**Viterbi算法**搜索已知观察序列及HMM情况下最可能的隐藏状态序列 —— 词性标注（观察状态-句子中的单词，隐藏状态-词性）
+    - 学习：**前向-后向算法**被用来进行参数估计（A和B不能被直接测量），根据观察序列和与其有关的隐藏状态集来估计最合适的HMM。
+3. 前向算法：
+    - 穷举搜索
     
 ## Paper: CNN for Sentence Classification
 1. filter: h*k
+
+## 书籍：Speech and Language Processing(3rd)
+https://web.stanford.edu/~jurafsky/slp3/
+
+## word2vec - Google
+**pip install --upgrade gensim**
+1. 词向量： One-hot representation --> Distributed Representation --> 计算欧氏距离或cos距离得到词语语义距离
+2. 语言模型： N-gram, N-pos(part of speech) --> 拟合P
+3. Word2vec有两种类型，每种类型有两种策略
+4. CBOW加层次的网络结构：输入层（词向量）-->隐藏层（累加和）-->输出层（霍夫曼树）——判断一句话是否是自然语言
+
+## GloVe - Stanford
+**pip install glove_python**
 
 ## 数据：
 1. 腾讯AI Lab开源中文词向量数据：https://ai.tencent.com/ailab/nlp/embedding.html

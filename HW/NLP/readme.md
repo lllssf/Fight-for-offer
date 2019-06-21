@@ -22,11 +22,7 @@
         - FoolNLTK: https://github.com/rockyzhengwu/FoolNLTK
         - pyltp: https://github.com/HIT-SCIR/pyltp
     - Java： Paoding（准确率、分词速度、新词识别等，最棒）、mmseg4j（切分速度、准确率较高）、IKAnalyzer、Imdict-chinese-analyzer、Ansj、盘古分词
-5. 深度学习在分词中的应用：
-    - word2vector词向量：将文字数字化，可以方便地找到近义词或反义词等。
-    - RNN：长序列上下文
-    - 深度学习库： Keras
-6. 目前最准确的模型：
+5. 目前最准确的模型：
     - Toward Fast and Accurate Neural Chinese Word Segmentation with Multi-Criteria Learning https://arxiv.org/pdf/1903.04190.pdf
     - State-of-the-art Chinese Word Segmentation with Bi-LSTMs https://aclweb.org/anthology/D18-1529
 ### 词性标注（POS tagging）
@@ -44,7 +40,16 @@
     - 义原：知识表示语言（描述一个”概念“的最小意义单位），《知网》共有1500义原
 ### 中文输入纠错
 
-    
+### 词法分析
+难点： 新词、错别字、谐音字、非规范词、歧义
+#### 歧义消除
+## 入门建议
+1. **了解NLP最基本的知识**：《Speech and Language Processing》
+2. **了解早年经典的NLP模型以及论文**：例如机器翻译中的IBM模型
+3. **了解机器学习的基本模型**：吴恩达的 machine learning 
+4. **多看NLP其他子领域的论文**：NLP 有很多子领域，MT，信息抽取，parsing，tagging，情感分析，MRC 等等
+5. **了解 CV 和 data mining 领域的基本重大进展**
+
 ## 工具：
 - NLTK（Natural Language Toolkit）
     1. 官方教程：http://www.nltk.org/book/
@@ -78,7 +83,8 @@ http://nlpprogress.com/
 ## 数据：
 1. 腾讯AI Lab开源中文词向量数据：https://ai.tencent.com/ailab/nlp/embedding.html
 2. 中文维基百科数据： https://dumps.wikimedia.org/zhwiki/latest/zhwiki-latest-pages-articles.xml.bz2
-
+## 实例
+NLP入门实例推荐（Tensorflow实现）https://blog.csdn.net/Irving_zhang/article/details/69396923
 ## 思路
 1. 新词库
     - “”中的文字不拆分

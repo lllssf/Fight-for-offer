@@ -1,15 +1,15 @@
 # NLP 
 ## 语言底层分析技术：
 1. 中文分词 --> 词性标注 --> 依存句法分析
-2. 解决方法：
-    - 序列标注方法（Sequence Labeling）
-    - 基于转移的方法（Transition-based Method）
+2. 方法：
+    - 序列标注方法（Sequence Labeling）：给字打标签，很难利用词级别的信息
+    - 基于转移的方法（Transition-based Method）：通过转移动作序列进行分词，即从左往右判断相邻的字是否分开。
     - 基于图的方法(Graph-based Method)
 ### 难点： 
 1. 语言使用灵活
 2. 书写错误，纠错成为必要的预处理环节
 3. 新词
-### 中文分词
+### 中文分词（Chinese Word Segmentation，CWS）
 1. 将连续的字序列按照一定的规范切分成词序列
 2. 中文分词准确率低的原因：词表收录、分词规范、新词识别、歧义切分
 3. 中文分词算法：
@@ -26,59 +26,25 @@
 6. 目前最准确的模型：
 - Toward Fast and Accurate Neural Chinese Word Segmentation with Multi-Criteria Learning https://arxiv.org/pdf/1903.04190.pdf
 - State-of-the-art Chinese Word Segmentation with Bi-LSTMs https://aclweb.org/anthology/D18-1529
+### 词性标注（POS tagging）
+词性标注一般比较简单，所以多与其他任务相结合
+1. 基于字的序列标注方法：使用“BMES”和词性的交叉标签来给每个字打标签。
+2. 基于转移的方法：先利用BiLSTM编码器来提取上下文特征，在解码时每一步都预测一个动作，动作的候选集和为是否分词以及词性。
+### 依存句法分析（Parsing）
+1. 基于转移的方法：Stack LSTM，通过三个LSTM来建模栈状态、待输入序列和动作序列
+2. 基于图的方法：Biaffine模型（最流行）
 ### 词语相似度
 1. 基于世界知识（Ontology），一般利用同义词词典等 -> 计算词语语义距离
 2. 基于大规模的语料来统计， -> 词语的相关性
 3. 《知网》是一个以汉语和英语的词语所代表的概念为描述对象，以揭示概念与概念之间以及概念所具有的属性之间的关系为基本内容的常识知识库。：
     - 概念：对词汇语义的描述
     - 义原：知识表示语言（描述一个”概念“的最小意义单位），《知网》共有1500义原
-
-## 正则表达式
-
-## HMM（隐马尔科夫模型）
-### 生成模式（Generating Patterns）
-1. 确定性模式（Deterministic Patterns）
-2. 非确定性模式（Non-deterministic Patterns）：
-    - **马尔可夫假设**：模型的当前状态仅仅依赖于前面的几个状态
-    - 状态转移概率并不随时间变化而不同（常常不符合实际）。
-    - **pi向量**： 定义系统初始化时每个状态的概率。
-3. 隐藏模式（Hidden Patterns）
-    - **隐马尔可夫模型（Hidden Markov Models）**：在一个标准的马尔可夫过程中引入一组观察状态以及其与隐藏状态的概率关系。
-    - **隐藏状态**（一个系统的真实状态，可由Markov过程描述） --> **观察状态**（可直接观测的状态）
-    - **pi向量**： 隐藏状态的初始概率
-    - **状态转移矩阵**：隐藏状态->另一个隐藏状态的概率
-    - **混淆矩阵（confusion matrix）**：隐藏状态->观察状态的概率。
-### 隐马尔科夫模型（HMM）
-1. 定义：三元组(pi, A, B)
-    - pi：初始概率向量
-    - A：状态转移矩阵
-    - B：混淆矩阵
-2. 应用：
-    - 评估：**前向算法（Forward algorithm）**对一个观察序列匹配最可能的HMM —— 语音识别
-    - 解码：**Viterbi算法**搜索已知观察序列及HMM情况下最可能的隐藏状态序列 —— 词性标注（观察状态-句子中的单词，隐藏状态-词性）
-    - 学习：**前向-后向算法（Forward-Backward）**被用来进行参数估计（A和B不能被直接测量），根据观察序列和与其有关的隐藏状态集来估计最合适的HMM。
-3. 前向算法：
-    - 穷举搜索(O(2TN^T)) --> 使用递归降低问题复杂度（利用概率的时间不变性）(O(N^2T))
-    - **局部概率(partitial probability)**
-    - T —— 观察序列的长度， N —— 隐藏状态数目
-4. 维特比算法（Viterbi）：对于一个特定的HMM，viterbi被用来寻找生成一个观察序列的最可能的隐藏状态序列。利用概率的时间不变性，通过避免计算网格中每一条路径的概率来降低问题的复杂度。
-    - 局部概率：是由反向指针指示的路径到达某个状态的概率。
-    - 基于全局序列做决策（在语音识别中即使某个单词发音的中间音素失真或丢失仍可以被识别）
-5. 前向-后向算法：首先对于HMM的参数进行一个初始的估计，然后通过给定是数据评估参数然后修正，是一种以梯度下降形式寻找错误测度的最小值。
-    - 是**EM（Expectation-Maximization）算法**的一个特例，EM算法是求参数**最大似然估计（MLE，maximum likelihood estimation）**的一种方法，可以广泛地应用于处理缺损数据，截尾数据，带有讨厌数据等**不完全数据（Incomplete data）**
-### HMM在自然语言处理中的应用：词性标注（Part-of-Speech tagging, POS tagging)
-#### 词性标注
-1. 选择标记集：
-    - 参考计算所汉语词性标记集： http://www.ictclas.org/ictclas_docs_003.html
-2. 词性标注歧义：需结合上下文
-3. 标注算法：
-    - **基于规则的标注算法（rule-based tagger）**：手工制作的歧义消解规则库
-    - **随机标注算法（stochastic tagger）**：使用一个训练语料库来计算在给定上下文中特定单词具有给定标记的概率，如基于HMM的标注算法
-    - **混合型标注算法**：TBL标注算法
-    
-    
-## Paper: CNN for Sentence Classification
-1. filter: h*k
+## 工具：NLTK（Natural Language Toolkit）
+1. 官方教程：http://www.nltk.org/book/
+2. 在NLTK中使用Stanford中文工具包教程：
+    - http://www.zmonster.me/2016/06/08/use-stanford-nlp-package-in-nltk.html
+    - https://www.cnblogs.com/baiboy/p/nltk1.html
+    - http://www.52nlp.cn/python%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E5%A4%84%E7%90%86%E5%AE%9E%E8%B7%B5-%E5%9C%A8nltk%E4%B8%AD%E4%BD%BF%E7%94%A8%E6%96%AF%E5%9D%A6%E7%A6%8F%E4%B8%AD%E6%96%87%E5%88%86%E8%AF%8D%E5%99%A8
 
 ## 书籍：Speech and Language Processing(3rd)
 https://web.stanford.edu/~jurafsky/slp3/

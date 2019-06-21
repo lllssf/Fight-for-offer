@@ -17,7 +17,14 @@
     - 基于统计模型的序列标注切分：N元语言模型、信道-噪声模型、HMM、CRF(Conditional random field)条件随机场
     - 综合方法
 4. 中文分词开源工具： 
-    - python：jieba, SnowNLP, PkuSeg, THULAC, HanLP
+    - python：
+        - jieba: https://github.com/fxsjy/jieba
+        - SnowNLP: https://github.com/isnowfy/snownlp
+        - PkuSeg: https://github.com/lancopku/pkuseg-python
+        - THULAC: https://github.com/thunlp/THULAC-Python
+        - HanLP: https://github.com/hankcs/pyhanlp
+        - FoolNLTK: https://github.com/rockyzhengwu/FoolNLTK
+        - pyltp: https://github.com/HIT-SCIR/pyltp
     - Java： Paoding（准确率、分词速度、新词识别等，最棒）、mmseg4j（切分速度、准确率较高）、IKAnalyzer、Imdict-chinese-analyzer、Ansj、盘古分词
 5. 深度学习在分词中的应用：
     - word2vector词向量：将文字数字化，可以方便地找到近义词或反义词等。

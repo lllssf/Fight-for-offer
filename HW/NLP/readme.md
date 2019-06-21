@@ -1,6 +1,10 @@
 # NLP 
 ## 语言底层分析技术：
-包括：分词、词性标注、命名实体识别、句法分析
+1. 中文分词 --> 词性标注 --> 依存句法分析
+2. 解决方法：
+    - 序列标注方法（Sequence Labeling）
+    - 基于转移的方法（Transition-based Method）
+    - 基于图的方法(Graph-based Method)
 ### 难点： 
 1. 语言使用灵活
 2. 书写错误，纠错成为必要的预处理环节
@@ -12,13 +16,16 @@
     - 基于字符串匹配：最大匹配、最少切分、改进扫描
     - 基于统计模型的序列标注切分：N元语言模型、信道-噪声模型、HMM、CRF(Conditional random field)条件随机场
     - 综合方法
-4. 中文分词工具： 
+4. 中文分词开源工具： 
     - python：jieba, SnowNLP, PkuSeg, THULAC, HanLP
     - Java： Paoding（准确率、分词速度、新词识别等，最棒）、mmseg4j（切分速度、准确率较高）、IKAnalyzer、Imdict-chinese-analyzer、Ansj、盘古分词
 5. 深度学习在分词中的应用：
     - word2vector词向量：将文字数字化，可以方便地找到近义词或反义词等。
     - RNN：长序列上下文
     - 深度学习库： Keras
+6. 目前最准确的模型：
+- Toward Fast and Accurate Neural Chinese Word Segmentation with Multi-Criteria Learning https://arxiv.org/pdf/1903.04190.pdf
+- State-of-the-art Chinese Word Segmentation with Bi-LSTMs https://aclweb.org/anthology/D18-1529
 ### 词语相似度
 1. 基于世界知识（Ontology），一般利用同义词词典等 -> 计算词语语义距离
 2. 基于大规模的语料来统计， -> 词语的相关性
@@ -29,8 +36,6 @@
 ## 正则表达式
 
 ## HMM（隐马尔科夫模型）
-### Introduction
-寻找一个事物在一段时间里的变化模式（规律）
 ### 生成模式（Generating Patterns）
 1. 确定性模式（Deterministic Patterns）
 2. 非确定性模式（Non-deterministic Patterns）：
@@ -77,7 +82,8 @@
 
 ## 书籍：Speech and Language Processing(3rd)
 https://web.stanford.edu/~jurafsky/slp3/
-
+## 网站：NLP-progress - 最新研究进展和模型
+http://nlpprogress.com/
 ## word2vec - Google
 **pip install --upgrade gensim**
 1. 词向量： One-hot representation --> Distributed Representation --> 计算欧氏距离或cos距离得到词语语义距离

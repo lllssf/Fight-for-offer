@@ -31,8 +31,8 @@
     - RNN：长序列上下文
     - 深度学习库： Keras
 6. 目前最准确的模型：
-- Toward Fast and Accurate Neural Chinese Word Segmentation with Multi-Criteria Learning https://arxiv.org/pdf/1903.04190.pdf
-- State-of-the-art Chinese Word Segmentation with Bi-LSTMs https://aclweb.org/anthology/D18-1529
+    - Toward Fast and Accurate Neural Chinese Word Segmentation with Multi-Criteria Learning https://arxiv.org/pdf/1903.04190.pdf
+    - State-of-the-art Chinese Word Segmentation with Bi-LSTMs https://aclweb.org/anthology/D18-1529
 ### 词性标注（POS tagging）
 词性标注一般比较简单，所以多与其他任务相结合
 1. 基于字的序列标注方法：使用“BMES”和词性的交叉标签来给每个字打标签。

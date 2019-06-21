@@ -46,13 +46,20 @@
 3. 《知网》是一个以汉语和英语的词语所代表的概念为描述对象，以揭示概念与概念之间以及概念所具有的属性之间的关系为基本内容的常识知识库。：
     - 概念：对词汇语义的描述
     - 义原：知识表示语言（描述一个”概念“的最小意义单位），《知网》共有1500义原
-## 工具：NLTK（Natural Language Toolkit）
-1. 官方教程：http://www.nltk.org/book/
-2. 在NLTK中使用Stanford中文工具包教程：
-    - http://www.zmonster.me/2016/06/08/use-stanford-nlp-package-in-nltk.html
-    - https://www.cnblogs.com/baiboy/p/nltk1.html
-    - http://www.52nlp.cn/python%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E5%A4%84%E7%90%86%E5%AE%9E%E8%B7%B5-%E5%9C%A8nltk%E4%B8%AD%E4%BD%BF%E7%94%A8%E6%96%AF%E5%9D%A6%E7%A6%8F%E4%B8%AD%E6%96%87%E5%88%86%E8%AF%8D%E5%99%A8
+### 中文输入纠错
 
+    
+## 工具：
+- NLTK（Natural Language Toolkit）
+    1. 官方教程：http://www.nltk.org/book/
+    2. 在NLTK中使用Stanford中文工具包教程：
+        - http://www.zmonster.me/2016/06/08/use-stanford-nlp-package-in-nltk.html
+        - https://www.cnblogs.com/baiboy/p/nltk1.html
+        - http://www.52nlp.cn/python%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E5%A4%84%E7%90%86%E5%AE%9E%E8%B7%B5-%E5%9C%A8nltk%E4%B8%AD%E4%BD%BF%E7%94%A8%E6%96%AF%E5%9D%A6%E7%A6%8F%E4%B8%AD%E6%96%87%E5%88%86%E8%AF%8D%E5%99%A8
+- FastNLP
+https://github.com/fastnlp/fastNLP
+- LTP: Language Technology Platform
+https://github.com/HIT-SCIR/ltp
 ## 书籍：Speech and Language Processing(3rd)
 https://web.stanford.edu/~jurafsky/slp3/
 ## 网站：NLP-progress - 最新研究进展和模型
@@ -63,10 +70,15 @@ http://nlpprogress.com/
 2. 语言模型： N-gram, N-pos(part of speech) --> 拟合P
 3. Word2vec有两种类型，每种类型有两种策略
 4. CBOW加层次的网络结构：输入层（词向量）-->隐藏层（累加和）-->输出层（霍夫曼树）——判断一句话是否是自然语言
+5. 参考资料：https://blog.csdn.net/Mr_tyting/article/details/80091842
 
 ## GloVe - Stanford
 **pip install glove_python**
-
+## BERT
+1. 参考资料：
+    - https://zhuanlan.zhihu.com/p/49271699
+    - https://mp.weixin.qq.com/s?__biz=MzA3MzI4MjgzMw==&mid=2650751075&idx=2&sn=0a3ecd1af5f8549051760775e34db342&chksm=871a841db06d0d0bcf3cc4e620bb384e050ba6e92224d338a8ddc1543add97a4a4e7919ebf15&scene=21#wechat_redirect
+    - https://www.jiqizhixin.com/articles/2019-02-18-12?from=synced&keyword=NLP
 ## 数据：
 1. 腾讯AI Lab开源中文词向量数据：https://ai.tencent.com/ailab/nlp/embedding.html
 2. 中文维基百科数据： https://dumps.wikimedia.org/zhwiki/latest/zhwiki-latest-pages-articles.xml.bz2
@@ -76,4 +88,4 @@ http://nlpprogress.com/
     - “”中的文字不拆分
     - 专有名词不拆分
     - “操作”词汇标注
-2. 统一相似or模糊or错别字词语，如登陆，登入统一为登录 —— 中文输入纠错
+2. 统一相似or模糊or错别字词语，如登陆，登入统一为登录 —— 中文输入纠错：https://blog.csdn.net/hqc888688/article/details/74858126

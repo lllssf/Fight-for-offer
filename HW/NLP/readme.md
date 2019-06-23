@@ -85,6 +85,8 @@ http://nlpprogress.com/
 2. 中文维基百科数据： https://dumps.wikimedia.org/zhwiki/latest/zhwiki-latest-pages-articles.xml.bz2
 ## 实例
 NLP入门实例推荐（Tensorflow实现）https://blog.csdn.net/Irving_zhang/article/details/69396923
+## 训练中文词向量
+https://blog.csdn.net/lilong117194/article/details/82849054
 ## 思路
 1. 新词库
     - “”中的文字不拆分

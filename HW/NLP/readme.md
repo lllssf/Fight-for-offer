@@ -86,8 +86,11 @@ http://nlpprogress.com/
 ## 实例
 NLP入门实例推荐（Tensorflow实现）https://blog.csdn.net/Irving_zhang/article/details/69396923
 ## 训练中文词向量
-https://blog.csdn.net/lilong117194/article/details/82849054
-https://blog.csdn.net/zhylhy520/article/details/87615772
+- Word2vec https://blog.csdn.net/lilong117194/article/details/82849054
+- BERT 
+        - https://blog.csdn.net/zhylhy520/article/details/87615772
+        - https://blog.csdn.net/qq_29660957/article/details/88683823
+       
 ## 思路
 1. 新词库
     - “”中的文字不拆分

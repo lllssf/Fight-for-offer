@@ -13,6 +13,7 @@
     - 基于转移的方法（Transition-based Method）：通过转移动作序列进行分词，即从左往右判断相邻的字是否分开。
     - 基于图的方法(Graph-based Method)
 ### 预训练
+预训练是为了解决当前任务带有标注信息的数据有限问题，通过设计好的网络结构对大量自然语言文本抽取出大量语言学知识特征，这样就补充了数据不充足的当前任务的特征。
 #### CV预训练
 1. 浅层加载其他数据训练好的参数，然后：
     - Frozen：浅层参数在训练过程中不变
@@ -20,11 +21,25 @@
 2. 为解决当前数据量小的问题，且能加快训练过程的收敛速度
 3. 有效原因：对于层级结构的CNN，底层网络学习到的是可复用的特征，如线段等跟具体任务无关的通用特征
 #### NLP预训练
-1. Word Embedding是NLP里的早期预训练技术：
-
-Onehot编码作为原始单词输入，乘以矩阵Q获得向量C，然后用于预测单词。这个C就是单词对应的Word Embedding值，Q是网络参数需要学习，训练好后每一行代表一个单词对应的Word embedding值。
-2. 
-
+1. **Word Embedding**是NLP里的早期预训练技术：通过神经网络学习语言模型任务过程中，Onehot编码作为原始单词输入，乘以矩阵Q获得向量C，然后用于预测单词。这个C就是单词对应的Word Embedding值，Q是网络参数需要学习，训练好后每一行代表一个单词对应的Word embedding值。这个网络不仅能够根据上下文预测后接单词，同时获得的副产品——矩阵Q。
+2. 2013最火的语言模型做Word Embedding的工具是**Word2Vec**，训练方法分为：
+    - CBOW：从一个句子里去掉一个词，用这个词的上下文预测被抠掉的词；
+    - Skip-gram：输入某单词预测上下文单词
+3. 18年以前，使用Word2Vec或Glove，通过做语言模型任务就可以获得每个单词的Word Embedding。此Q矩阵，即Word Embedding就是Onehot层到embedding层的网络预训练参数，后续训练过程也分为Frozen和Fine-Tuning。效果不显著的原因是**多义词问题**，同一单词经WordsVec会映射到同一word embedding值，无法区分不同语义。
+4. 从Word Embedding到**ELMO（Embedding from language models）**，提出的论文为“*Deep contextualized word representation*”。ELMO根据当前上下文对Word Embedding进行动态调整。此类预训练方法被称为“*Feature-based Pre-Training*”。缺点是：
+    - 特征抽取器选择的是LSTM而非Transformer（“*Attention is all you need*”提出，是个叠加的“自注意力机制（Self Attention）”构成的深度网络，是目前NLP里最强的特征提取器，参考资料：https://zhuanlan.zhihu.com/p/37601161 |可视化介绍：https://jalammar.github.io/illustrated-transformer/ | 代码及原理：http://nlp.seas.harvard.edu/2018/04/03/attention.html）
+    - ELMO采取双向拼接比Bert一体化的融合特征方式弱。
+5. 从Word Embedding到**GPT（Generative Pre-Training）**，GPT分两个阶段：
+    - 使用Transformer特征抽取器利用语言模型进行预训练
+    - 通过Fine-Tuning的模式解决下游任务，下游任务的网络结构要改造成和GPT的网络结构一样
+6. NLP四大类任务：
+    - **序列标注**：分词/词性标注/命名实体识别（NER）/语义标注……
+    - **分类任务**：文本分类/情感计算……
+    - **句子关系判断**：Entailment/QA/自然语言推理……
+    - **生成式任务**：机器翻译/文本摘要……
+7. Bert特点：**特征抽取器采用Transformer**，**预训练时采用双向语言模型**。下游任务网络改造：对于序列标注问题，输入部分需要增加起始和终结符号，输出部分Transformer最后一次每个单词对应位置都进行分类。在构造双向语言模型方面：
+    - **Masked Language Model**本质思想是CBOW，细节方面有改进，利用mask掩码来标记被抠掉的词
+    - **Next Sentence Prediction**是指做预训练时要选择两个句子，一种是真正顺序相连的两句话，一种是第二句是随机选取拼接在第一句后的两句话。这种机制有助于句子关系判断任务。
 ### 中文分词（Chinese Word Segmentation，CWS）
 1. 将连续的字序列按照一定的规范切分成词序列
 2. 中文分词准确率低的原因：词表收录、分词规范、新词识别、歧义切分

@@ -34,7 +34,7 @@
     - 使用Transformer特征抽取器利用语言模型进行预训练
     - 通过Fine-Tuning的模式解决下游任务，下游任务的网络结构要改造成和GPT的网络结构一样
 6. NLP四大类任务：
-    - **序列标注**：分词/词性标注/命名实体识别（NER）/语义标注……
+    - **序列标注**：分词/词性标注/命名实体识别（Named Entity Recognition，NER）/语义标注……
     - **分类任务**：文本分类/情感计算……
     - **句子关系判断**：Entailment/QA/自然语言推理……
     - **生成式任务**：机器翻译/文本摘要……
@@ -65,6 +65,7 @@
 词性标注一般比较简单，所以多与其他任务相结合
 1. 基于字的序列标注方法：使用“BMES”和词性的交叉标签来给每个字打标签。
 2. 基于转移的方法：先利用BiLSTM编码器来提取上下文特征，在解码时每一步都预测一个动作，动作的候选集和为是否分词以及词性。
+- 中文标注集：863词性标注
 ### 依存句法分析（Parsing）
 1. 基于转移的方法：Stack LSTM，通过三个LSTM来建模栈状态、待输入序列和动作序列
 2. 基于图的方法：Biaffine模型（最流行）
@@ -76,8 +77,10 @@
     - 义原：知识表示语言（描述一个”概念“的最小意义单位），《知网》共有1500义原
 ### 中文输入纠错
 
-### 词法分析
-难点： 新词、错别字、谐音字、非规范词、歧义
+### 依存句法分析 or 依存语义分析
+**依存语法(Dependency Parsing, DP)** 通过分析语言单位内成分之间的依存关系揭示其句法结构。 直观来讲，依存句法分析识别句子中的“主谓宾”、“定状补”这些语法成分，并分析各成分之间的关系。依存句法分析标注关系 (共15种)
+差别：
+1. 句法依存某种程度上更重视非实词（介词）在句子结构中的作用，而语义依存更倾向具有直接语义关联的实词之间建立直接依存弧，非实词作为辅助标记。
 #### 歧义消除
 
 
@@ -90,8 +93,8 @@
         - http://www.52nlp.cn/python%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E5%A4%84%E7%90%86%E5%AE%9E%E8%B7%B5-%E5%9C%A8nltk%E4%B8%AD%E4%BD%BF%E7%94%A8%E6%96%AF%E5%9D%A6%E7%A6%8F%E4%B8%AD%E6%96%87%E5%88%86%E8%AF%8D%E5%99%A8
 - FastNLP
 https://github.com/fastnlp/fastNLP
-- LTP: Language Technology Platform
-https://github.com/HIT-SCIR/ltp
+- 哈工大语言云**LTP**: Language Technology Platform
+https://github.com/HIT-SCIR/ltp | http://www.ltp-cloud.com/
 ## 书籍：Speech and Language Processing(3rd)
 https://web.stanford.edu/~jurafsky/slp3/
 ## 网站：NLP-progress - 最新研究进展和模型
@@ -133,3 +136,6 @@ NLP入门实例推荐（Tensorflow实现）https://blog.csdn.net/Irving_zhang/ar
     - 专有名词不拆分
     - “操作”词汇标注
 2. 统一相似or模糊or错别字词语，如登陆，登入统一为登录 —— 中文输入纠错：https://blog.csdn.net/hqc888688/article/details/74858126
+
+## 任务目标
+1.动宾短语提取

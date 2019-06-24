@@ -1,10 +1,30 @@
 # NLP任务攻坚筹备工作 
+## 入门建议
+1. **了解NLP最基本的知识**：《Speech and Language Processing》
+2. **了解早年经典的NLP模型以及论文**：例如机器翻译中的IBM模型
+3. **了解机器学习的基本模型**：吴恩达的 machine learning 
+4. **多看NLP其他子领域的论文**：NLP 有很多子领域，MT，信息抽取，parsing，tagging，情感分析，MRC 等等
+5. **了解 CV 和 data mining 领域的基本重大进展**
+
 ## 任务流程：
-1. 中文分词 --> 词性标注 --> 依存句法分析
+1. 预训练 --> 中文分词 --> 词性标注 --> 依存句法分析
 2. 方法：
     - 序列标注方法（Sequence Labeling）：给字打标签，很难利用词级别的信息
     - 基于转移的方法（Transition-based Method）：通过转移动作序列进行分词，即从左往右判断相邻的字是否分开。
     - 基于图的方法(Graph-based Method)
+### 预训练
+#### CV预训练
+1. 浅层加载其他数据训练好的参数，然后：
+    - Frozen：浅层参数在训练过程中不变
+    - Fine-Tuning：浅层参数随训练过程改变
+2. 为解决当前数据量小的问题，且能加快训练过程的收敛速度
+3. 有效原因：对于层级结构的CNN，底层网络学习到的是可复用的特征，如线段等跟具体任务无关的通用特征
+#### NLP预训练
+1. Word Embedding是NLP里的早期预训练技术：
+
+Onehot编码作为原始单词输入，乘以矩阵Q获得向量C，然后用于预测单词。这个C就是单词对应的Word Embedding值，Q是网络参数需要学习，训练好后每一行代表一个单词对应的Word embedding值。
+2. 
+
 ### 中文分词（Chinese Word Segmentation，CWS）
 1. 将连续的字序列按照一定的规范切分成词序列
 2. 中文分词准确率低的原因：词表收录、分词规范、新词识别、歧义切分
@@ -43,12 +63,7 @@
 ### 词法分析
 难点： 新词、错别字、谐音字、非规范词、歧义
 #### 歧义消除
-## 入门建议
-1. **了解NLP最基本的知识**：《Speech and Language Processing》
-2. **了解早年经典的NLP模型以及论文**：例如机器翻译中的IBM模型
-3. **了解机器学习的基本模型**：吴恩达的 machine learning 
-4. **多看NLP其他子领域的论文**：NLP 有很多子领域，MT，信息抽取，parsing，tagging，情感分析，MRC 等等
-5. **了解 CV 和 data mining 领域的基本重大进展**
+
 
 ## 工具：
 - NLTK（Natural Language Toolkit）

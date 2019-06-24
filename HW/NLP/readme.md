@@ -103,14 +103,19 @@ http://nlpprogress.com/
 3. Word2vec有两种类型，每种类型有两种策略
 4. CBOW加层次的网络结构：输入层（词向量）-->隐藏层（累加和）-->输出层（霍夫曼树）——判断一句话是否是自然语言
 5. 参考资料：https://blog.csdn.net/Mr_tyting/article/details/80091842
-
 ## GloVe - Stanford
 **pip install glove_python**
-## BERT
+## BERT - Google
 1. 参考资料：
     - https://zhuanlan.zhihu.com/p/49271699
     - https://mp.weixin.qq.com/s?__biz=MzA3MzI4MjgzMw==&mid=2650751075&idx=2&sn=0a3ecd1af5f8549051760775e34db342&chksm=871a841db06d0d0bcf3cc4e620bb384e050ba6e92224d338a8ddc1543add97a4a4e7919ebf15&scene=21#wechat_redirect
     - https://www.jiqizhixin.com/articles/2019-02-18-12?from=synced&keyword=NLP
+2. 输入是一个线性序列，支持单句文本和句对文本，句首用符号[CLS]表示，句尾用符号[SEP]表示，如果是句对，句子之间添加符号[SEP]。输入特征，由**Token向量、Segment向量和Position向量**三个共同组成，分别代表单词信息、句子信息、位置信息。
+3. MLM随机地掩盖15%的单词，然后对掩盖的单词做预测任务，此类处理的缺点是：
+    - 预训练阶段随机用符号[MASK]替换掩盖的单词，而下游任务微调阶段并没有Mask操作，会造成预训练跟微调阶段的不匹配
+    - 预训练阶段只对15%被掩盖的单词进行预测，而不是整个句子，模型收敛需要花更多时间
+    为解决第一个缺点，随机掩盖的单词80%用符号[MASK]替换，10%用其他单词替换，10%不做替换操作。
+4. NSP，预测下一句模型，增加对句子A和B关系的预测任务，50%的时间里B是A的下一句，分类标签为IsNext，另外50%的时间里B是随机挑选的句子，并不是A的下一句，分类标签为NotNext。
 ## 数据：
 1. 腾讯AI Lab开源中文词向量数据：https://ai.tencent.com/ailab/nlp/embedding.html
 2. 中文维基百科数据： https://dumps.wikimedia.org/zhwiki/latest/zhwiki-latest-pages-articles.xml.bz2

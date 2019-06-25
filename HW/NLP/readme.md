@@ -95,10 +95,20 @@
 https://github.com/fastnlp/fastNLP
 - 哈工大语言云**LTP**: Language Technology Platform
 https://github.com/HIT-SCIR/ltp | http://www.ltp-cloud.com/
+    - python接口：pyltp 安装
+    ```
+    #windows下载git：https://gitforwindows.org/
+    git clone https://github.com/HIT-SCIR/pyltp
+    #进入pyltp文件位置
+    git submodule init
+    git submodule update
+    #用管理员模式运行
+    python setup.py install
+    ```
 ## 书籍：Speech and Language Processing(3rd)
 https://web.stanford.edu/~jurafsky/slp3/
 ## 网站：NLP-progress - 最新研究进展和模型
-http://nlpprogress.com/
+http://nlpprogre    ss.com/
 ## word2vec - Google
 **pip install --upgrade gensim**
 1. 词向量： One-hot representation --> Distributed Representation --> 计算欧氏距离或cos距离得到词语语义距离

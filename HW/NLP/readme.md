@@ -96,23 +96,23 @@ https://github.com/fastnlp/fastNLP
 - 哈工大语言云**LTP**: Language Technology Platform
 https://github.com/HIT-SCIR/ltp | http://www.ltp-cloud.com/
     - python接口：pyltp 安装
+    下载pyltp：http://mlln.cn/2018/01/31/pyltp%E5%9C%A8windows%E4%B8%8B%E7%9A%84%E7%BC%96%E8%AF%91%E5%AE%89%E8%A3%85/pyltp-0.2.1-cp36-cp36m-win_amd64.whl
     ```
-    # 下载pyltp：http://mlln.cn/2018/01/31/pyltp%E5%9C%A8windows%E4%B8%8B%E7%9A%84%E7%BC%96%E8%AF%91%E5%AE%89%E8%A3%85/pyltp-0.2.1-cp36-cp36m-win_amd64.whl
-    pip install path\pyltp-0.2.1-cp36-cp36m-win_amd64.whl
+    > pip install path\pyltp-0.2.1-cp36-cp36m-win_amd64.whl
     ```
 ## 书籍：Speech and Language Processing(3rd)
 https://web.stanford.edu/~jurafsky/slp3/
 ## 网站：NLP-progress - 最新研究进展和模型
 http://nlpprogre    ss.com/
 ## word2vec - Google
-**pip install --upgrade gensim**
+```> pip install --upgrade gensim**```
 1. 词向量： One-hot representation --> Distributed Representation --> 计算欧氏距离或cos距离得到词语语义距离
 2. 语言模型： N-gram, N-pos(part of speech) --> 拟合P
 3. Word2vec有两种类型，每种类型有两种策略
 4. CBOW加层次的网络结构：输入层（词向量）-->隐藏层（累加和）-->输出层（霍夫曼树）——判断一句话是否是自然语言
 5. 参考资料：https://blog.csdn.net/Mr_tyting/article/details/80091842
 ## GloVe - Stanford
-**pip install glove_python**
+```> pip install glove_python```
 ## BERT - Google
 1. 参考资料：
     - https://zhuanlan.zhihu.com/p/49271699

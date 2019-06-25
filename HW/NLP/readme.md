@@ -100,12 +100,13 @@ https://github.com/HIT-SCIR/ltp | http://www.ltp-cloud.com/
     ```
     > pip install path\pyltp-0.2.1-cp36-cp36m-win_amd64.whl
     ```
+    -说明文档：https://pyltp.readthedocs.io/zh_CN/latest/api.html#id19
 ## 书籍：Speech and Language Processing(3rd)
 https://web.stanford.edu/~jurafsky/slp3/
 ## 网站：NLP-progress - 最新研究进展和模型
 http://nlpprogre    ss.com/
 ## word2vec - Google
-```> pip install --upgrade gensim**```
+```> pip install --upgrade gensim```
 1. 词向量： One-hot representation --> Distributed Representation --> 计算欧氏距离或cos距离得到词语语义距离
 2. 语言模型： N-gram, N-pos(part of speech) --> 拟合P
 3. Word2vec有两种类型，每种类型有两种策略

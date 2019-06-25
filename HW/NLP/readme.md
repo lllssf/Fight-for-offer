@@ -97,13 +97,8 @@ https://github.com/fastnlp/fastNLP
 https://github.com/HIT-SCIR/ltp | http://www.ltp-cloud.com/
     - python接口：pyltp 安装
     ```
-    #windows下载git：https://gitforwindows.org/
-    git clone https://github.com/HIT-SCIR/pyltp
-    #进入pyltp文件位置
-    git submodule init
-    git submodule update
-    #用管理员模式运行
-    python setup.py install
+    # 下载pyltp：http://mlln.cn/2018/01/31/pyltp%E5%9C%A8windows%E4%B8%8B%E7%9A%84%E7%BC%96%E8%AF%91%E5%AE%89%E8%A3%85/pyltp-0.2.1-cp36-cp36m-win_amd64.whl
+    pip install path\pyltp-0.2.1-cp36-cp36m-win_amd64.whl
     ```
 ## 书籍：Speech and Language Processing(3rd)
 https://web.stanford.edu/~jurafsky/slp3/

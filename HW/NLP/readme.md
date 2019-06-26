@@ -26,7 +26,8 @@
         - 论元识别
         - 显式篇章关系识别
         - 隐式篇章关系识别
-https://pic3.zhimg.com/v2-3d2cc9e84d5912dac812dc51ddee54fa_r.jpg
+
+![avatar](https://pic3.zhimg.com/v2-3d2cc9e84d5912dac812dc51ddee54fa_r.jpg)
 ## 任务流程：
 1. 预训练 --> 中文分词 --> 词性标注 --> 依存句法分析
 2. 方法：

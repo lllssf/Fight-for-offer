@@ -7,30 +7,6 @@
 5. 了解 CV 和 data mining 领域的基本重大进展
 6. 推荐书目：
 ![booklist](https://pic1.zhimg.com/v2-07af312990ad8cdf850c4b94eeecbfc8_r.jpg)
-## NLP分析技术
-1. 词法分析（lexical analysis）：
-    - 分词（word segmentation/tokenization）
-    - 词性标注（part-of-speech tag）
-    - 命名实体识别（named entity recognize）
-2. 句法分析（syntatic parsing）：
-    - 短句结构句法分析（constituent parsing）
-    - 依存句法分析（dependency syntactic parsing）
-    - 深层文法句法分析
-3. 语义分析（semantic parsing）：
-    - 词汇级语义分析：
-        - 词义消歧（word sense disambiguation）
-        - 词义表示和学习（word representation）
-    - 句子级语义分析：
-        - 语义角色标注（semantic role labeling，SRL）
-        - 深层语义分析：语义依存分析（semantic dependency parsing）
-    - 篇章级语义分析：
-        - 篇章连接词识别
-        - 论元识别
-        - 显式篇章关系识别
-        - 隐式篇章关系识别
-
-![avatar](https://pic3.zhimg.com/v2-3d2cc9e84d5912dac812dc51ddee54fa_r.jpg)
-## 正则表达式
 
 ## 预训练
 ### word2vec - Google
@@ -95,7 +71,14 @@ https://web.stanford.edu/~jurafsky/slp3/
 ## 网站：NLP-progress - 最新研究进展和模型
 http://nlpprogre    ss.com/
 ## 论文
-
+1. Attention is All You Need
+2. BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding
+3. XLNet: Generalized Autoregressive Pretraining for Language Understanding
+## 笔记
+1. HMM学习
+2. Speech and Language Processing中英文阅读笔记
+3. Transformer 
+4. 任务相关
 ## 数据：
 1. 腾讯AI Lab开源中文词向量数据：https://ai.tencent.com/ailab/nlp/embedding.html
 2. 中文维基百科数据： https://dumps.wikimedia.org/zhwiki/latest/zhwiki-latest-pages-articles.xml.bz2

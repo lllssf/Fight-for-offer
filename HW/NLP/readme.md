@@ -69,7 +69,7 @@ https://github.com/HIT-SCIR/ltp | http://www.ltp-cloud.com/
 ## 书籍：Speech and Language Processing(3rd)
 https://web.stanford.edu/~jurafsky/slp3/
 ## 网站：NLP-progress - 最新研究进展和模型
-http://nlpprogre    ss.com/
+http://nlpprogress.com/
 ## 论文
 1. Attention is All You Need
 2. BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding

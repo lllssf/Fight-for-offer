@@ -26,12 +26,12 @@ Tensorflow 实现在[Tensor2Tensor package](https://github.com/tensorflow/tensor
     i. 针对每个词向量创造三个向量：Query vector **Q**, Key vector **K**, Value vector **V**：
         - 每个向量由输入与其权重向量（**WQ,WK,WV**）相乘得到，权重向量在训练过程中更新
         - **q,k,v**的维度小于词向量，这种架构可以使Multi-Head Attention计算不变\
-    ii.计算其他输入词向量相对于当前处理词向量的分值，这个分值决定我们在处理当前单词时要对其他输入单词投入多少注意力。**Score = q · v**
+    ii. 计算其他输入词向量相对于当前处理词向量的分值，这个分值决定我们在处理当前单词时要对其他输入单词投入多少注意力。**Score = q · v**
     ![score](https://jalammar.github.io/images/t/transformer_self_attention_score.png)\
-    iii.分值除以Key vector的维度的平方根（在文中**k**的维度是64，这里除以了8），这一步为了使梯度更稳定。\
-    iv.将上述得到的所有分值经过softmax运算。\
-    v.用上一步得到的分值乘以每个单词的value vectors。\
-    vi.对所有的value vectors加权求和得到当前处理单词的self-attention输出。\
+    iii. 分值除以Key vector的维度的平方根（在文中**k**的维度是64，这里除以了8），这一步为了使梯度更稳定。\
+    iv. 将上述得到的所有分值经过softmax运算。\
+    v. 用上一步得到的分值乘以每个单词的value vectors。\
+    vi. 对所有的value vectors加权求和得到当前处理单词的self-attention输出。\
     为提高self-attention的处理速度，该过程由矩阵运算完成。
     ![matrix](https://jalammar.github.io/images/t/self-attention-matrix-calculation-2.png)
 4. 

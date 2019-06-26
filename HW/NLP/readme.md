@@ -1,10 +1,12 @@
-# NLP任务攻坚筹备工作 
+# NLP任务筹备
 ## 入门建议
-1. **了解NLP最基本的知识**：《Speech and Language Processing》
-2. **了解早年经典的NLP模型以及论文**：例如机器翻译中的IBM模型
-3. **了解机器学习的基本模型**：吴恩达的 machine learning 
-4. **多看NLP其他子领域的论文**：NLP 有很多子领域，MT，信息抽取，parsing，tagging，情感分析，MRC 等等
-5. **了解 CV 和 data mining 领域的基本重大进展**
+1. 了解NLP最基本的知识：《Speech and Language Processing》
+2. 了解早年经典的NLP模型以及论文：例如机器翻译中的IBM模型
+3. 了解机器学习的基本模型：吴恩达的 machine learning 
+4. 多看NLP其他子领域的论文：NLP 有很多子领域，MT，信息抽取，parsing，tagging，情感分析，MRC 等等
+5. 了解 CV 和 data mining 领域的基本重大进展
+6. 推荐书目：
+![booklist](https://pic1.zhimg.com/v2-07af312990ad8cdf850c4b94eeecbfc8_r.jpg)
 ## NLP分析技术
 1. 词法分析（lexical analysis）：
     - 分词（word segmentation/tokenization）
@@ -19,7 +21,7 @@
         - 词义消歧（word sense disambiguation）
         - 词义表示和学习（word representation）
     - 句子级语义分析：
-        - 语义角色标注（semantic role labeling）
+        - 语义角色标注（semantic role labeling，SRL）
         - 深层语义分析：语义依存分析（semantic dependency parsing）
     - 篇章级语义分析：
         - 篇章连接词识别
@@ -29,7 +31,7 @@
 
 ![avatar](https://pic3.zhimg.com/v2-3d2cc9e84d5912dac812dc51ddee54fa_r.jpg)
 ## 任务流程：
-1. 预训练 --> 中文分词 --> 词性标注 --> 依存句法分析
+1. 预训练 --> 中文分词 --> 词性标注 --> 语义分析/句法分析
 2. 方法：
     - 序列标注方法（Sequence Labeling）：给字打标签，很难利用词级别的信息
     - 基于转移的方法（Transition-based Method）：通过转移动作序列进行分词，即从左往右判断相邻的字是否分开。
@@ -97,12 +99,16 @@
 3. 《知网》是一个以汉语和英语的词语所代表的概念为描述对象，以揭示概念与概念之间以及概念所具有的属性之间的关系为基本内容的常识知识库。：
     - 概念：对词汇语义的描述
     - 义原：知识表示语言（描述一个”概念“的最小意义单位），《知网》共有1500义原
-### 中文输入纠错
-
-### 依存句法分析 or 依存语义分析
+### 句法分析 or 语义分析
 **依存语法(Dependency Parsing, DP)** 通过分析语言单位内成分之间的依存关系揭示其句法结构。 直观来讲，依存句法分析识别句子中的“主谓宾”、“定状补”这些语法成分，并分析各成分之间的关系。依存句法分析标注关系 (共15种)
 差别：
 1. 句法依存某种程度上更重视非实词（介词）在句子结构中的作用，而语义依存更倾向具有直接语义关联的实词之间建立直接依存弧，非实词作为辅助标记。
+#### 语义角色标注
+1. 定义：语义角色标注是一种浅层语义分析技术，以句子为单位，分析句子的谓词-论元结构。以句子的谓词为中心，研究句子中各成分与谓词之间的关系，并且用语义角色来描述他们之间的关系。
+2. 语义角色标签：\
+![SRLtag](https://pic3.zhimg.com/v2-4ee6b7e3310d8fca9df7a1c0d772a83a_r.jpg)
+3. 方法：
+
 #### 歧义消除
 
 
@@ -137,6 +143,7 @@ http://nlpprogre    ss.com/
 ## GloVe - Stanford
 ```> pip install glove_python```
 ## BERT - Google
+Bert_base & Bert_large
 1. 参考资料：
     - https://zhuanlan.zhihu.com/p/49271699
     - https://mp.weixin.qq.com/s?__biz=MzA3MzI4MjgzMw==&mid=2650751075&idx=2&sn=0a3ecd1af5f8549051760775e34db342&chksm=871a841db06d0d0bcf3cc4e620bb384e050ba6e92224d338a8ddc1543add97a4a4e7919ebf15&scene=21#wechat_redirect

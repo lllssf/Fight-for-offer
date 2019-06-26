@@ -5,6 +5,27 @@
 3. **了解机器学习的基本模型**：吴恩达的 machine learning 
 4. **多看NLP其他子领域的论文**：NLP 有很多子领域，MT，信息抽取，parsing，tagging，情感分析，MRC 等等
 5. **了解 CV 和 data mining 领域的基本重大进展**
+## NLP分析技术
+1. 词法分析（lexical analysis）：
+    - 分词（word segmentation/tokenization）
+    - 词性标注（part-of-speech tag）
+    - 命名实体识别（named entity recognize）
+2. 句法分析（syntatic parsing）：
+    - 短句结构句法分析（constituent parsing）
+    - 依存句法分析（dependency syntactic parsing）
+    - 深层文法句法分析
+3. 语义分析（semantic parsing）：
+    - 词汇级语义分析：
+        - 词义消歧（word sense disambiguation）
+        - 词义表示和学习（word representation）
+    - 句子级语义分析：
+        - 语义角色标注（semantic role labeling）
+        - 深层语义分析：语义依存分析（semantic dependency parsing）
+    - 篇章级语义分析：
+        - 篇章连接词识别
+        - 论元识别
+        - 显式篇章关系识别
+        - 隐式篇章关系识别
 https://pic3.zhimg.com/v2-3d2cc9e84d5912dac812dc51ddee54fa_r.jpg
 ## 任务流程：
 1. 预训练 --> 中文分词 --> 词性标注 --> 依存句法分析
@@ -100,7 +121,7 @@ https://github.com/HIT-SCIR/ltp | http://www.ltp-cloud.com/
     ```
     > pip install path\pyltp-0.2.1-cp36-cp36m-win_amd64.whl
     ```
-    -说明文档：https://pyltp.readthedocs.io/zh_CN/latest/api.html#id19
+    - 说明文档：https://pyltp.readthedocs.io/zh_CN/latest/api.html#id19
 ## 书籍：Speech and Language Processing(3rd)
 https://web.stanford.edu/~jurafsky/slp3/
 ## 网站：NLP-progress - 最新研究进展和模型

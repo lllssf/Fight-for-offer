@@ -5,7 +5,7 @@
 3. **了解机器学习的基本模型**：吴恩达的 machine learning 
 4. **多看NLP其他子领域的论文**：NLP 有很多子领域，MT，信息抽取，parsing，tagging，情感分析，MRC 等等
 5. **了解 CV 和 data mining 领域的基本重大进展**
-
+https://pic3.zhimg.com/v2-3d2cc9e84d5912dac812dc51ddee54fa_r.jpg
 ## 任务流程：
 1. 预训练 --> 中文分词 --> 词性标注 --> 依存句法分析
 2. 方法：

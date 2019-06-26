@@ -22,7 +22,7 @@ Tensorflow 实现在[Tensor2Tensor package](https://github.com/tensorflow/tensor
 1. Input --> *encoder* --> *decoder* --> Output
 2. encoder: Self-Attention --> Feed Forward NN\
    decoder: Self-Attention --> Encoder-Decoder Attention(如上文所述） --> Feed Forward NN
-3. Self-Attention 使encoder在处理当前单词的同时利用了其他相关单词的处理信息。其实现步骤为：\
+3. **Self-Attention** 使encoder在处理当前单词的同时利用了其他相关单词的处理信息。其实现步骤为：\
     i. 针对每个词向量创造三个向量：Query vector **Q**, Key vector **K**, Value vector **V**：
         - 每个向量由输入与其权重向量（**WQ,WK,WV**）相乘得到，权重向量在训练过程中更新
         - **q,k,v**的维度小于词向量，这种架构可以使Multi-Head Attention计算不变\
@@ -36,15 +36,15 @@ Tensorflow 实现在[Tensor2Tensor package](https://github.com/tensorflow/tensor
     ![matrix](https://jalammar.github.io/images/t/self-attention-matrix-calculation-2.png)
 4. 该论文进一步细化了self-attention通过加入**Multi-Head Attention**机制。文中共有8个attention heads，输出得到8个不同的Z，而FFNN的输入是一个词向量，所以将\[Z0 Z1 ··· Z7]乘以权重**WO** 
 ![W0](https://jalammar.github.io/images/t/transformer_attention_heads_weight_matrix_o.png)
-5. 为了确定每个单词在输入序列中的位置，在每个embedding上又加入了一个向量positional encoding vectors，该向量遵循模型学习的特定模式，其中每个值在\[-1,1]区间。用TensorFlow实现是用[ get_timing_signal_1d()](https://github.com/tensorflow/tensor2tensor/blob/23bd23b9830059fbc349381b70d9429b5c40a139/tensor2tensor/layers/common_attention.py)，该实现的优点是能够根据未知的序列长度进行缩放（例如，在用训练好的模型翻译比训练集中任意句子都长的句子时）。
-6. 使用了残差结构，如图所示：
+5. 为了确定每个单词在输入序列中的位置，在每个embedding上又加入了一个向量**positional encoding vectors**，该向量遵循模型学习的特定模式，其中每个值在\[-1,1]区间。用TensorFlow实现是用[ get_timing_signal_1d()](https://github.com/tensorflow/tensor2tensor/blob/23bd23b9830059fbc349381b70d9429b5c40a139/tensor2tensor/layers/common_attention.py)，该实现的优点是能够根据未知的序列长度进行缩放（例如，在用训练好的模型翻译比训练集中任意句子都长的句子时）。
+6. 使用了**残差结构**，如图所示：
 ![residual](https://jalammar.github.io/images/t/transformer_resideual_layer_norm_2.png)
-7. 最顶层编码器的输出被转换为Attention vectors **K**和**V**，然后作为解码器“encoder-decoder attention”层的输入，而**Q**通过下层解码器的输出获取。
+7. 最顶层编码器的输出被转换为Attention vectors **K**和**V**，然后作为解码器“**encoder-decoder attention**”层的输入，而**Q**通过下层解码器的输出获取。
 8. 每个时间步的输出会被反馈给下一个时间步作为输入，并像编码器一样会在每个词向量基础上添加positional vector。直到输出<EOS>结束输出。
 ![output](https://jalammar.github.io/images/t/transformer_decoding_2.gif)
-<iframe height=500 width=500 src="https://jalammar.github.io/images/t/transformer_decoding_2.gif">
 9. 与编码器不同的是，解码器的self-attention层只关注输出序列中之前的位置，未输出位置被设置为-inf来屏蔽。
-
+10. 编码器输出的是词向量，还要用Linear层（全连接层）和Softmax层来得到对应的单词，softmax的输出与“输出单词词典”一一对应。
+11. **训练
 
 ### 阅读正文
 

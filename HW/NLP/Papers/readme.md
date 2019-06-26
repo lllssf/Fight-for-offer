@@ -42,6 +42,7 @@ Tensorflow 实现在[Tensor2Tensor package](https://github.com/tensorflow/tensor
 7. 最顶层编码器的输出被转换为Attention vectors **K**和**V**，然后作为解码器“encoder-decoder attention”层的输入，而**Q**通过下层解码器的输出获取。
 8. 每个时间步的输出会被反馈给下一个时间步作为输入，并像编码器一样会在每个词向量基础上添加positional vector。直到输出<EOS>结束输出。
 ![output](https://jalammar.github.io/images/t/transformer_decoding_2.gif)
+<iframe height=500 width=500 src="https://jalammar.github.io/images/t/transformer_decoding_2.gif">
 9. 与编码器不同的是，解码器的self-attention层只关注输出序列中之前的位置，未输出位置被设置为-inf来屏蔽。
 
 

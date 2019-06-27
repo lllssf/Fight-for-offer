@@ -1,4 +1,3 @@
-# NLP 学习
 ## 入门建议
 1. 了解NLP最基本的知识：《Speech and Language Processing》
 2. 了解早年经典的NLP模型以及论文：例如机器翻译中的IBM模型

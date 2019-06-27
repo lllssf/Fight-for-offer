@@ -44,7 +44,9 @@ Tensorflow 实现在[Tensor2Tensor package](https://github.com/tensorflow/tensor
 ![output](https://jalammar.github.io/images/t/transformer_decoding_2.gif)
 9. 与编码器不同的是，解码器的self-attention层只关注输出序列中之前的位置，未输出位置被设置为-inf来屏蔽。
 10. 编码器输出的是词向量，还要用Linear层（全连接层）和Softmax层来得到对应的单词，softmax的输出与“输出单词词典”一一对应。
-11. **训练
+11. **训练**：
+    - 对输出词典进行one-hot编码，维度为词典长度
+    - greedy decoding(保留概率最高的输出） V.S. beam search（保留概率最高的前n个输出，n是超参数）
 
 ### 阅读正文
 

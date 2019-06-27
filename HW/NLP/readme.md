@@ -69,7 +69,7 @@ Bert_base & Bert_large
 ## 笔记
 1. [HMM学习](https://github.com/lllssf/Fight-for-offer/blob/master/HW/NLP/HMM%E5%AD%A6%E4%B9%A0.md)
 2. [Speech and Language Processing中英文阅读笔记](https://github.com/lllssf/Fight-for-offer/blob/master/HW/NLP/%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E5%A4%84%E7%90%86%E7%BB%BC%E8%AE%BA%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0.md)
-3. [Transformer](https://github.com/lllssf/Fight-for-offer/blob/master/HW/NLP/Transformer%20&%20Attention.md)
+3. [Transformer](https://github.com/lllssf/Fight-for-offer/blob/master/HW/NLP/Papers/readme.md)
 4. [任务相关](https://github.com/lllssf/Fight-for-offer/blob/master/HW/NLP/%E4%BB%BB%E5%8A%A1%E7%AD%B9%E5%A4%87.md)
 ## 数据：
 1. [腾讯AI Lab开源中文词向量数据](https://ai.tencent.com/ailab/nlp/embedding.html)

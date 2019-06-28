@@ -1,7 +1,7 @@
 def sentence_seg(para):
     sentence = []
-    quote  = re.split(r'(\w*：?“.*?”\w*\W?|\w*:?".*?"\W?|\w*【.*?】\w*\W?|{.*?}\W?)',para,re.M) # 将带引用符号的子句拆分，本数据集中只有这四种引用符
-#     print('\n'.join(quote))
+    quote  = re.split(r'(\w*：?“.*?”\D*\W?|\w*:?".*?"\D*\W?|\w*【.*?】\D*\W?|{.*?}\D*\W?)',para,re.M) # 将带引用符号的子句拆分，本数据集中只有这四种引用符
+
     for q in quote:
         f = re.search(r'[‘|“|【|\[|\(|\'|\"]',q) # 对不带引用符号的句子进一步拆分
         if  f == None:
@@ -14,3 +14,4 @@ def sentence_seg(para):
         else:
             sentence.append(q)
     return sentence
+

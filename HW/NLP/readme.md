@@ -17,7 +17,6 @@
 5. [参考资料](https://blog.csdn.net/Mr_tyting/article/details/80091842)
 
 ### BERT - Google
-Bert_base & Bert_large
 1. 参考资料：
     - [从Word Embedding到Bert模型](https://zhuanlan.zhihu.com/p/49271699)
     - [机器之心全面解读](https://mp.weixin.qq.com/s?__biz=MzA3MzI4MjgzMw==&mid=2650751075&idx=2&sn=0a3ecd1af5f8549051760775e34db342&chksm=871a841db06d0d0bcf3cc4e620bb384e050ba6e92224d338a8ddc1543add97a4a4e7919ebf15&scene=21#wechat_redirect)
@@ -28,7 +27,11 @@ Bert_base & Bert_large
     - 预训练阶段只对15%被掩盖的单词进行预测，而不是整个句子，模型收敛需要花更多时间
     为解决第一个缺点，随机掩盖的单词80%用符号[MASK]替换，10%用其他单词替换，10%不做替换操作。
 4. NSP，预测下一句模型，增加对句子A和B关系的预测任务，50%的时间里B是A的下一句，分类标签为IsNext，另外50%的时间里B是随机挑选的句子，并不是A的下一句，分类标签为NotNext。
-
+5. BERT适用场景：
+    - 偏向在语言本身中就包含答案，而不特别依赖文本外的其它特征的任务，比如QA和阅读理解；对于某些任务，除了文本类特征外，其它特征也很关键，比如搜索的用户行为／链接分析／内容质量等也非常重要，所以Bert的优势可能就不太容易发挥出来。
+    - 句子或者段落的匹配类任务，Bert特别适合用来解决判断句子关系类问题
+    - 越是需要深层语义特征的任务，越适合利用Bert来解决；而对有些NLP任务来说，浅层的特征即可解决问题，典型的浅层特征性任务比如分词，POS词性标注，NER，文本分类等任务
+    - 比较适合解决输入长度不太长的NLP任务，而输入比较长的任务，典型的比如文档级别的任务，Bert解决起来可能就不太好。Bert更适合解决句子级别或者段落级别的NLP任务。
 ### 训练中文词向量
 - Word2vec [参考](https://blog.csdn.net/lilong117194/article/details/82849054)
 - BERT [参考1](https://blog.csdn.net/zhylhy520/article/details/87615772) | [参考2](https://blog.csdn.net/qq_29660957/article/details/88683823) | [生成句向量](https://blog.csdn.net/u012526436/article/details/87697242)
@@ -79,3 +82,5 @@ Bert_base & Bert_large
 2. [中文维基百科数据](https://dumps.wikimedia.org/zhwiki/latest/zhwiki-latest-pages-articles.xml.bz2)
 ## 项目实践
 [NLP入门实例推荐（Tensorflow实现）](https://blog.csdn.net/Irving_zhang/article/details/69396923)
+[深度学习的NLP实践](https://zhuanlan.zhihu.com/p/28126584)
+

@@ -31,7 +31,7 @@ Bert_base & Bert_large
 
 ### 训练中文词向量
 - Word2vec [参考](https://blog.csdn.net/lilong117194/article/details/82849054)
-- BERT [参考1](https://blog.csdn.net/zhylhy520/article/details/87615772) | [参考2](https://blog.csdn.net/qq_29660957/article/details/88683823)
+- BERT [参考1](https://blog.csdn.net/zhylhy520/article/details/87615772) | [参考2](https://blog.csdn.net/qq_29660957/article/details/88683823) | [生成句向量](https://blog.csdn.net/u012526436/article/details/87697242)
 ## 中文分词开源工具： 
 - python： [jieba](https://github.com/fxsjy/jieba) | [SnowNLP](https://github.com/isnowfy/snownlp) | [PkuSeg](https://github.com/lancopku/pkuseg-python) | [THULAC](https://github.com/thunlp/THULAC-Python) | [HanLP](https://github.com/hankcs/pyhanlp) | [FoolNLTK](https://github.com/rockyzhengwu/FoolNLTK) | [pyltp](https://github.com/HIT-SCIR/pyltp)
 - Java： Paoding（准确率、分词速度、新词识别等，最棒）、mmseg4j（切分速度、准确率较高）、IKAnalyzer、Imdict-chinese-analyzer、Ansj、盘古分词
@@ -71,7 +71,9 @@ Bert_base & Bert_large
 3. [Transformer](https://github.com/lllssf/Fight-for-offer/blob/master/HW/NLP/Papers/readme.md)
 4. [任务相关](https://github.com/lllssf/Fight-for-offer/blob/master/HW/NLP/%E4%BB%BB%E5%8A%A1%E7%AD%B9%E5%A4%87.md)
 ## 部分通用可公开代码
-1. [分句](https://github.com/lllssf/Fight-for-offer/blob/master/HW/NLP/code/sentence_seg.py) 
+1. [部分数据清洗](https://github.com/lllssf/Fight-for-offer/blob/master/HW/NLP/code/data_process.py)
+2. [分句](https://github.com/lllssf/Fight-for-offer/blob/master/HW/NLP/code/sentence_seg.py) 
+3. [词向量余弦相似度](https://github.com/lllssf/Fight-for-offer/blob/master/HW/NLP/code/WE_cos.py)
 ## 数据：
 1. [腾讯AI Lab开源中文词向量数据](https://ai.tencent.com/ailab/nlp/embedding.html)
 2. [中文维基百科数据](https://dumps.wikimedia.org/zhwiki/latest/zhwiki-latest-pages-articles.xml.bz2)

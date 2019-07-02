@@ -1,4 +1,6 @@
 # 论文阅读笔记
+## A Primer on Neural Network Modelsfor Natural Language Processing
+神经网络应用于NLP的情况
 ## Attention
 Tensorflow 实现在[Tensor2Tensor package](https://github.com/tensorflow/tensor2tensor)（相关文档在[T2T notebook](https://colab.research.google.com/github/tensorflow/tensor2tensor/blob/master/tensor2tensor/notebooks/hello_t2t.ipynb)），哈佛大学团队用[PyTorch](http://nlp.seas.harvard.edu/2018/04/03/attention.html)实现了论文
 ### 阅读前参阅其他文章的笔记

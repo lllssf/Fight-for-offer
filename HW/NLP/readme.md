@@ -82,4 +82,4 @@
 2. [中文维基百科数据](https://dumps.wikimedia.org/zhwiki/latest/zhwiki-latest-pages-articles.xml.bz2)
 ## 项目实践
 - [NLP入门实例推荐（Tensorflow实现）](https://blog.csdn.net/Irving_zhang/article/details/69396923)
-
+- [Jupyter-NLP-course](https://gke.mybinder.org/v2/gh/yandexdataschool/nlp_course/master)

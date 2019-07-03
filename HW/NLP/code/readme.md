@@ -23,6 +23,6 @@
      >pip install bert-serving-client
      >D:\python36\Scripts>bert-serving-start -model_dir D:\Bert\chinese_L-12_H-768_A-12
      ```
-4. 用pyltp分词和词性标注构建词典，速度慢，建议使用其他工具（略）。
+4. 用pyltp分词和词性标注构建词典，速度慢，建议使用其他工具（使用jieba速度快很多，详情略）。
 
    

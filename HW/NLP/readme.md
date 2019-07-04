@@ -77,6 +77,7 @@
 1. [部分数据清洗](https://github.com/lllssf/Fight-for-offer/blob/master/HW/NLP/code/data_process.py)
 2. [分句](https://github.com/lllssf/Fight-for-offer/blob/master/HW/NLP/code/sentence_seg.py) 
 3. [词向量余弦相似度](https://github.com/lllssf/Fight-for-offer/blob/master/HW/NLP/code/WE_cos.py)
+4. [词向量聚类](https://github.com/lllssf/Fight-for-offer/blob/master/HW/NLP/code/word_cluster.py)
 ## 数据：
 1. [腾讯AI Lab开源中文词向量数据](https://ai.tencent.com/ailab/nlp/embedding.html)
 2. [中文维基百科数据](https://dumps.wikimedia.org/zhwiki/latest/zhwiki-latest-pages-articles.xml.bz2)

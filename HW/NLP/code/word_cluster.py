@@ -28,7 +28,7 @@ estimator = KMeans(n_clusters=300)  # 构造聚类器
 estimator.fit(verb_vec)  # 聚类
 label_pred = estimator.labels_  # 获取聚类标签
 print(label_pred)
-print("轮廓系数: %0.3f" % metrics.silhouette_score(verb_vec, label_pred)) #轮廓系数评价聚类的好坏
+print("轮廓系数: {}".format(metrics.silhouette_score(verb_vec, label_pred))) #轮廓系数评价聚类的好坏
 
 # 建立label-序号对应的字典
 label_dic = dict()

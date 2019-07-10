@@ -84,3 +84,9 @@
 ## 项目实践
 - [NLP入门实例推荐（Tensorflow实现）](https://blog.csdn.net/Irving_zhang/article/details/69396923)
 - [Jupyter-NLP-course](https://gke.mybinder.org/v2/gh/yandexdataschool/nlp_course/master)
+## NLP的未来
+[NLP将迎来黄金十年](https://www.msra.cn/zh-cn/news/executivebylines/tech-bylines-nlp) By 微软亚洲研究院
+> 1. 将知识和常识引入目前基于数据的学习系统中。
+> 2. 低资源的NLP任务的学习方法。
+> 3. 上下文建模、多轮语义理解。
+> 4. 基于语义分析、知识和常识的可解释NLP。

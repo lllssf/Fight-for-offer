@@ -4,8 +4,6 @@
 3. 了解机器学习的基本模型：吴恩达的 machine learning 
 4. 多看NLP其他子领域的论文：NLP 有很多子领域，MT，信息抽取，parsing，tagging，情感分析，MRC 等等
 5. 了解 CV 和 data mining 领域的基本重大进展
-6. 推荐书目：
-![booklist](https://pic1.zhimg.com/v2-07af312990ad8cdf850c4b94eeecbfc8_r.jpg)
 
 ## 预训练
 ### word2vec - Google

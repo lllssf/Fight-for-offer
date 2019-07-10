@@ -86,7 +86,10 @@
 - [Jupyter-NLP-course](https://gke.mybinder.org/v2/gh/yandexdataschool/nlp_course/master)
 ## NLP的未来
 [NLP将迎来黄金十年](https://www.msra.cn/zh-cn/news/executivebylines/tech-bylines-nlp) By 微软亚洲研究院
-> 1. 将知识和常识引入目前基于数据的学习系统中。
-> 2. 低资源的NLP任务的学习方法。
-> 3. 上下文建模、多轮语义理解。
-> 4. 基于语义分析、知识和常识的可解释NLP。
+> 值得关注的NLP技术：
+> 1. 预训练神经网络：粒度、结构、数据、下游任务
+> 2. 迁移学习和多任务学习
+> 3. 知识和常识的引入：百科-->机器阅读理解、知识图谱-->语义分析、对常识的获取与应用
+> 4. 低资源的NLP任务：标注数据资源贫乏的问题
+> 5. 多模态学习：自然语言和其他模态之间的互动-->视觉问答
+

@@ -56,6 +56,7 @@
     > pip install path\pyltp-0.2.1-cp36-cp36m-win_amd64.whl
     ```
     - [说明文档](https://pyltp.readthedocs.io/zh_CN/latest/api.html#id19)
+    - [强制分词](https://blog.csdn.net/kanshimekan/article/details/80974977)
 ## 书籍：
 - [Speech and Language Processing(3rd)](https://web.stanford.edu/~jurafsky/slp3/)
 ## 网站：

@@ -20,3 +20,7 @@
     - 基于动态网络的分析：KG结构随时间变化的分析
 ## 论文
 1. 综述性论文
+## 参考资料
+1. [知识图谱综述#1: 概念以及构建技术](https://mp.weixin.qq.com/s/bhk6iZdphif74HJlyUZOBQ?)
+2. [知识图谱综述#2: 构建技术与典型应用](https://mp.weixin.qq.com/s/j1ub_exp-T7kk7snHs4eYw)
+3. [当知识图谱“遇见”深度学习](https://blog.csdn.net/heyc861221/article/details/80129309)

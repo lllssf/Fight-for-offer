@@ -1,10 +1,3 @@
----
-tags: [nlp]
-title: python 相关
-created: '2019-07-10T02:04:58.746Z'
-modified: '2019-07-12T09:18:25.579Z'
----
-
 # python 相关
 ## Tips
 1. 在异常处理的 except block 中，把异常赋予了一个一个变量，那么这个变量会在 except block 执行结束时被删除。

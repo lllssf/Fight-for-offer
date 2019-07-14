@@ -25,19 +25,19 @@
 2. [知识图谱综述#2: 构建技术与典型应用](https://mp.weixin.qq.com/s/j1ub_exp-T7kk7snHs4eYw)
 3. [当知识图谱“遇见”深度学习](https://blog.csdn.net/heyc861221/article/details/80129309)
 
-Paper 
-Extracting Multiple-Relations in One-Pass with Pre-Trained Transformers
-Joint entity recognition and relation extraction as a multi-head selection problem
+Paper \
+Extracting Multiple-Relations in One-Pass with Pre-Trained Transformers\
+Joint entity recognition and relation extraction as a multi-head selection problem\
  
-permID service: 做实体去重的服务，拿到唯一实体ID
-https://permid.org/
-download entity data: 做实体去重的服务，拿到唯一实体ID
-https://permid.org/download
-Import to Neo4J guide:  导入实体到Neo4J 图数据库的步骤
-https://developers.refinitiv.com/knowledge-graph/knowledge-graph-feed-api/learning?content=48179&type=learning_material_item
+permID service: 做实体去重的服务，拿到唯一实体ID\
+https://permid.org/ \
+download entity data: 做实体去重的服务，拿到唯一实体ID\
+https://permid.org/download \
+Import to Neo4J guide:  导入实体到Neo4J 图数据库的步骤\
+https://developers.refinitiv.com/knowledge-graph/knowledge-graph-feed-api/learning?content=48179&type=learning_material_item \
  
-Neo4j guide: Neo4J图数据库的基本操作使用手册
-https://neo4j.com/developer/get-started/
+Neo4j guide: Neo4J图数据库的基本操作使用手册\
+https://neo4j.com/developer/get-started/ \
  
-Cypher query language:  图数据库的查询语言
+Cypher query language:  图数据库的查询语言\
 https://neo4j.com/developer/cypher/

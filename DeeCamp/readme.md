@@ -61,3 +61,4 @@
 6. 解决：big training data , powerful campulation facilities, Training tricks ==> high-complexity --> DNNs
 7. 1989年时就证明两层的神经网络就可以拟合任意函数，那么， Why "falt" not good?
 8. 表示学习的关键：**逐层处理（layer-by-layer processing）**。如果仅有逐层处理呢？ --> 决策树？Boosting？（x）：复杂度不足，始终基于原始特征，无特征变换。 So， 逐层处理 + 特征变换 ==> 深度模型 --
+[stanfordcorenlp](https://blog.csdn.net/qq_35203425/article/details/80451243)

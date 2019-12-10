@@ -179,6 +179,13 @@ python的垃圾回收是指内存不再使用时的释放和回收过程。有�
 
 1. **引用计数（reference counting）**：当引用计数为0时，代表无任何地方引用该对象，解释器将该对象安全地销毁。夸牙通过`sys.getrefcount()`函数获取对象当前的引用计数。
 2. **垃圾收集器（cyclic garbage collector）**：gc使用分代回收算法回收垃圾（空间换时间）。
+3. 禁止垃圾回收：
+   ```python
+   import gc
+   gc.disable()
+   main()
+   gc.enable()
+   ```
 
 ### 内存泄漏
 
